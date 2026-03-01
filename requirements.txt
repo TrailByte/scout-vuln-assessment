@@ -4,3 +4,4 @@ pam
 packaging
 aspose-cells-python
 requests
+python-dotenv
