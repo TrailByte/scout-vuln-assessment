@@ -7,10 +7,14 @@ import os
 from os.path import exists
 import re
 from packaging.version import Version
+from dotenv import load_dotenv
+
+load_dotenv()
 
 class CVEUpdater():
     def __init__(self, versions):
         self.versions = versions
+        self.api_key = os.getenv('NIST_API_KEY', '')
     
     def GetVulnerabilities(self):
         cached_cves_f = [pos_json for pos_json in os.listdir('.') if pos_json.startswith('CachedCVEs')]
@@ -59,7 +63,7 @@ class CVEUpdater():
 
     def get_CVEs_NIST(self, versions={}):
         vulnerabilities = {}
-        auth = HTTPBasicAuth("apiKey", "9a9374cd-04e7-4706-ae4c-fa4855a8f846")
+        auth = HTTPBasicAuth("apiKey", self.api_key)
         headers = {"Accept": "application/json"}
         if not versions:
             versions = self.versions
