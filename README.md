@@ -35,6 +35,7 @@ A cross-platform security assessment tool for automated vulnerability scanning, 
 ### Prerequisites
 - Python 3.x
 - Administrator/root privileges (required for system enumeration)
+- NIST NVD API Key (required for CVE querying)
 
 ### Dependencies
 ```bash
@@ -49,6 +50,29 @@ Required packages:
 - `aspose-cells-python` - Excel to PDF conversion
 - `requests` - CVE database queries
 - `python-dotenv` - Loads environment variables from a `.env` file
+
+---
+
+## Environment Configuration
+
+This tool queries the **National Vulnerability Database (NVD)** API.  
+You should provide a NIST API key via a `.env` file.
+
+### Create a `.env` file in the project root:
+
+```
+NIST_API_KEY=your_actual_nist_api_key_here
+```
+- The file must be in the same directory where you run `main.py`
+
+### Obtain an API Key
+
+Request a free API key from the NVD website:
+https://nvd.nist.gov/developers/request-an-api-key
+
+Without an API key, the tool will fail CVE requests for the service checks.
+
+---
 
 ## Usage
 
