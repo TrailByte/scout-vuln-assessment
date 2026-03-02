@@ -35,7 +35,7 @@ A cross-platform security assessment tool for automated vulnerability scanning, 
 ### Prerequisites
 - Python 3.x
 - Administrator/root privileges (required for system enumeration)
-- NIST NVD API Key (required for CVE querying)
+- (Optional) NIST NVD API Key (required for CVE querying for the services checks)
 
 ### Dependencies
 ```bash
