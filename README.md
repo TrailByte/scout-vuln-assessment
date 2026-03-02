@@ -48,6 +48,7 @@ Required packages:
 - `packaging` - Version comparison
 - `aspose-cells-python` - Excel to PDF conversion
 - `requests` - CVE database queries
+- `python-dotenv` - Loads environment variables from a `.env` file
 
 ## Usage
 
